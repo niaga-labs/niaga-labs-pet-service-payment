@@ -64,24 +64,24 @@ func NewPayment(bookingID, ownerID uuid.UUID, amountCents int64, currency string
 
 // --- Getters ---
 
-func (p *Payment) ID() uuid.UUID              { return p.id }
-func (p *Payment) BookingID() uuid.UUID        { return p.bookingID }
-func (p *Payment) OwnerID() uuid.UUID          { return p.ownerID }
-func (p *Payment) RunnerID() *uuid.UUID        { return p.runnerID }
-func (p *Payment) EscrowStatus() EscrowStatus  { return p.escrowStatus }
-func (p *Payment) AmountCents() int64          { return p.amountCents }
-func (p *Payment) PlatformFeeCents() int64     { return p.platformFeeCents }
-func (p *Payment) RunnerPayoutCents() int64    { return p.runnerPayoutCents }
-func (p *Payment) Currency() string            { return p.currency }
-func (p *Payment) PaymentMethod() string       { return p.paymentMethod }
-func (p *Payment) StripePaymentID() string     { return p.stripePaymentID }
-func (p *Payment) EscrowHeldAt() *time.Time    { return p.escrowHeldAt }
+func (p *Payment) ID() uuid.UUID                { return p.id }
+func (p *Payment) BookingID() uuid.UUID         { return p.bookingID }
+func (p *Payment) OwnerID() uuid.UUID           { return p.ownerID }
+func (p *Payment) RunnerID() *uuid.UUID         { return p.runnerID }
+func (p *Payment) EscrowStatus() EscrowStatus   { return p.escrowStatus }
+func (p *Payment) AmountCents() int64           { return p.amountCents }
+func (p *Payment) PlatformFeeCents() int64      { return p.platformFeeCents }
+func (p *Payment) RunnerPayoutCents() int64     { return p.runnerPayoutCents }
+func (p *Payment) Currency() string             { return p.currency }
+func (p *Payment) PaymentMethod() string        { return p.paymentMethod }
+func (p *Payment) StripePaymentID() string      { return p.stripePaymentID }
+func (p *Payment) EscrowHeldAt() *time.Time     { return p.escrowHeldAt }
 func (p *Payment) EscrowReleasedAt() *time.Time { return p.escrowReleasedAt }
-func (p *Payment) RefundedAt() *time.Time      { return p.refundedAt }
-func (p *Payment) RefundReason() string        { return p.refundReason }
-func (p *Payment) Version() int64              { return p.version }
-func (p *Payment) CreatedAt() time.Time        { return p.createdAt }
-func (p *Payment) UpdatedAt() time.Time        { return p.updatedAt }
+func (p *Payment) RefundedAt() *time.Time       { return p.refundedAt }
+func (p *Payment) RefundReason() string         { return p.refundReason }
+func (p *Payment) Version() int64               { return p.version }
+func (p *Payment) CreatedAt() time.Time         { return p.createdAt }
+func (p *Payment) UpdatedAt() time.Time         { return p.updatedAt }
 
 // --- Behavior / State Transitions ---
 
