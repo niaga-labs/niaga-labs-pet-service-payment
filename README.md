@@ -78,12 +78,26 @@ PLATFORM_FEE_PERCENT=15
 # Install dependencies
 go mod download
 
-# Run migrations
-go run cmd/migrate/main.go
+# Point at the shared dev-infra stack (cd ~/Documents/dev-infra; ./dev.ps1 up kilat)
+export DB_HOST=localhost DB_PORT=5432 DB_USER=kilat DB_PASSWORD=kilat_secret
+export DB_NAME=kilat_payment DB_SSL_MODE=disable
+
+# Apply the SQL migrations -- run from the repository root, the migration
+# source is resolved relative to the working directory
+go run ./cmd/migrate
 
 # Start the service
-go run cmd/server/main.go
+go run ./cmd/server
 ```
+
+### Two migration modes
+
+`cmd/migrate` applies the golang-migrate files in `migrations/` and is the source of
+truth for the schema. The server additionally auto-migrates the GORM models when
+`APP_ENV=development`, which is why the two can drift.
+
+`promos`, `promo_usages` and `subscriptions` have no SQL migration yet, so they exist
+only under the development `AutoMigrate` branch. Tracked as **KPD-60**, which blocks KPD-39.
 
 The service will start on port 8002.
 
