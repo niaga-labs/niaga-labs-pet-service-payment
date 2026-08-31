@@ -90,14 +90,16 @@ go run ./cmd/migrate
 go run ./cmd/server
 ```
 
-### Two migration modes
+### Migrations
 
-`cmd/migrate` applies the golang-migrate files in `migrations/` and is the source of
-truth for the schema. The server additionally auto-migrates the GORM models when
-`APP_ENV=development`, which is why the two can drift.
+`migrations/` is the single source of truth for the schema, in every environment including
+development. `cmd/migrate` applies the files and exits; `cmd/server` applies them at startup
+too, so a fresh boot is self-sufficient.
 
-`promos`, `promo_usages` and `subscriptions` have no SQL migration yet, so they exist
-only under the development `AutoMigrate` branch. Tracked as **KPD-60**, which blocks KPD-39.
+There is deliberately no GORM `AutoMigrate` path. Until KPD-60 the server auto-migrated in
+development and ran the SQL migrations everywhere else, and `promos`, `promo_usages` and
+`subscriptions` had no SQL migration -- so they existed only on a developer laptop. One path
+for all environments is what stops that class of drift returning.
 
 The service will start on port 8002.
 
