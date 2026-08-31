@@ -1,0 +1,5 @@
+# Globs (one per line) the git-add-bulk-guard hook treats as never-edit-in-place: a MODIFICATION of a
+# matching path blocks `git add -A` / `.` / `commit -a` (new untracked files there are fine).
+# Env files and key material are always protected — no need to list them.
+migrations/*.sql
+migrations/**/*.sql
