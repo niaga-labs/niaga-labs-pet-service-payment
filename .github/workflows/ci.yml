@@ -1,0 +1,14 @@
+# Calls the reusable Go CI in lib-common. See KPD-53.
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+jobs:
+  go:
+    uses: Kilat-Pet-Delivery/lib-common/.github/workflows/go-ci.yml@main
+    with:
+      needs-lib-common: true
+      needs-lib-proto: true
