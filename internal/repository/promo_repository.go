@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	promoDomain "github.com/Kilat-Pet-Delivery/service-payment/internal/domain/promo"
 	"github.com/google/uuid"
+	promoDomain "github.com/niaga-labs/niaga-labs-pet-service-payment/internal/domain/promo"
 	"gorm.io/gorm"
 )
 

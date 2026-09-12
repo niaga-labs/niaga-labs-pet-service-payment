@@ -3,7 +3,7 @@ package config
 import (
 	"time"
 
-	"github.com/Kilat-Pet-Delivery/lib-common/config"
+	"github.com/niaga-labs/niaga-labs-pet-lib-common/config"
 	"github.com/spf13/viper"
 )
 

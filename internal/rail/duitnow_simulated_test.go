@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/require"
 	"go.uber.org/zap"
 
-	"github.com/Kilat-Pet-Delivery/service-payment/internal/rail"
+	"github.com/niaga-labs/niaga-labs-pet-service-payment/internal/rail"
 )
 
 // fakeClock is a hand-rolled test clock that captures scheduled functions and

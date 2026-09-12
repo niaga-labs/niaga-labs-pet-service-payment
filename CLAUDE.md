@@ -1,7 +1,7 @@
 # Kilat Pet Delivery - service-payment
 
 Money: the escrow saga over a booking lifecycle, the Stripe anti-corruption layer, runner cash-outs, promo codes and subscriptions.
-Jira project **KPD** - GitHub `Kilat-Pet-Delivery/service-payment` - stack **Go 1.24 - Gin - GORM - PostgreSQL - Kafka**. Global rules live in `~/.claude/`;
+Jira project **KPD** - GitHub `niaga-labs/niaga-labs-pet-service-payment` - stack **Go 1.24 - Gin - GORM - PostgreSQL - Kafka**. Global rules live in `~/.claude/`;
 this file only adds what is specific here.
 
 ## Orient here first

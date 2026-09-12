@@ -5,9 +5,9 @@ import (
 	"errors"
 	"time"
 
-	"github.com/Kilat-Pet-Delivery/lib-common/domain"
-	paymentDomain "github.com/Kilat-Pet-Delivery/service-payment/internal/domain/payment"
 	"github.com/google/uuid"
+	"github.com/niaga-labs/niaga-labs-pet-lib-common/domain"
+	paymentDomain "github.com/niaga-labs/niaga-labs-pet-service-payment/internal/domain/payment"
 	"gorm.io/gorm"
 )
 

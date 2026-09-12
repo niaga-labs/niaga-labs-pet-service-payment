@@ -3,8 +3,8 @@ package payment
 import (
 	"time"
 
-	"github.com/Kilat-Pet-Delivery/lib-common/domain"
 	"github.com/google/uuid"
+	"github.com/niaga-labs/niaga-labs-pet-lib-common/domain"
 )
 
 // EscrowStatus represents the state of an escrow payment.
