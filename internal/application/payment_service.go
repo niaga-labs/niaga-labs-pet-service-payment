@@ -4,8 +4,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/Kilat-Pet-Delivery/lib-proto/events"
 	"github.com/Kilat-Pet-Delivery/lib-common/domain"
+	"github.com/Kilat-Pet-Delivery/lib-proto/events"
 	"github.com/Kilat-Pet-Delivery/service-payment/internal/domain/payment"
 	"github.com/Kilat-Pet-Delivery/service-payment/internal/saga"
 	"github.com/google/uuid"
@@ -44,9 +44,9 @@ type PaymentDTO struct {
 
 // PaymentService is the application service that orchestrates payment use cases.
 type PaymentService struct {
-	repo      payment.PaymentRepository
-	sagaSvc   *saga.PaymentSagaService
-	logger    *zap.Logger
+	repo    payment.PaymentRepository
+	sagaSvc *saga.PaymentSagaService
+	logger  *zap.Logger
 }
 
 // NewPaymentService creates a new PaymentService.

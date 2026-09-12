@@ -12,15 +12,15 @@ import (
 
 // CashOutModel is the GORM persistence model for the cash_out_requests table.
 type CashOutModel struct {
-	ID               uuid.UUID  `gorm:"type:uuid;primaryKey"`
-	RunnerID         uuid.UUID  `gorm:"type:uuid;not null;index"`
-	AmountMyrCents   int64      `gorm:"not null"`
-	FeeMyrCents      int64      `gorm:"not null;default:50"`
-	DestinationID    uuid.UUID  `gorm:"type:uuid;not null"`
-	Status           string     `gorm:"type:varchar(20);not null;default:'pending'"`
-	RequestedAt      time.Time  `gorm:"type:timestamptz;not null"`
-	CompletedAt      *time.Time `gorm:"type:timestamptz"`
-	SimulatedRailID  *string    `gorm:"type:varchar(255)"`
+	ID              uuid.UUID  `gorm:"type:uuid;primaryKey"`
+	RunnerID        uuid.UUID  `gorm:"type:uuid;not null;index"`
+	AmountMyrCents  int64      `gorm:"not null"`
+	FeeMyrCents     int64      `gorm:"not null;default:50"`
+	DestinationID   uuid.UUID  `gorm:"type:uuid;not null"`
+	Status          string     `gorm:"type:varchar(20);not null;default:'pending'"`
+	RequestedAt     time.Time  `gorm:"type:timestamptz;not null"`
+	CompletedAt     *time.Time `gorm:"type:timestamptz"`
+	SimulatedRailID *string    `gorm:"type:varchar(255)"`
 }
 
 // TableName specifies the table name for GORM.

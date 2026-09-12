@@ -24,8 +24,8 @@ type CreatePromoRequest struct {
 
 // ValidatePromoRequest holds data to validate a promo code.
 type ValidatePromoRequest struct {
-	Code       string `json:"code" binding:"required"`
-	AmountCents int64 `json:"amount_cents" binding:"required"`
+	Code        string `json:"code" binding:"required"`
+	AmountCents int64  `json:"amount_cents" binding:"required"`
 }
 
 // PromoDTO is the API response representation of a promo code.

@@ -121,16 +121,16 @@ func (p *PromoCode) IncrementUses() {
 }
 
 // Getters.
-func (p *PromoCode) ID() uuid.UUID            { return p.id }
-func (p *PromoCode) Code() string              { return p.code }
+func (p *PromoCode) ID() uuid.UUID              { return p.id }
+func (p *PromoCode) Code() string               { return p.code }
 func (p *PromoCode) DiscountType() DiscountType { return p.discountType }
-func (p *PromoCode) DiscountValue() int64      { return p.discountValue }
-func (p *PromoCode) MinAmountCents() int64     { return p.minAmountCents }
-func (p *PromoCode) MaxDiscountCents() int64   { return p.maxDiscountCents }
-func (p *PromoCode) MaxUses() int              { return p.maxUses }
-func (p *PromoCode) CurrentUses() int          { return p.currentUses }
-func (p *PromoCode) ValidFrom() time.Time      { return p.validFrom }
-func (p *PromoCode) ValidUntil() time.Time     { return p.validUntil }
-func (p *PromoCode) CreatedBy() uuid.UUID      { return p.createdBy }
-func (p *PromoCode) CreatedAt() time.Time      { return p.createdAt }
-func (p *PromoCode) UpdatedAt() time.Time      { return p.updatedAt }
+func (p *PromoCode) DiscountValue() int64       { return p.discountValue }
+func (p *PromoCode) MinAmountCents() int64      { return p.minAmountCents }
+func (p *PromoCode) MaxDiscountCents() int64    { return p.maxDiscountCents }
+func (p *PromoCode) MaxUses() int               { return p.maxUses }
+func (p *PromoCode) CurrentUses() int           { return p.currentUses }
+func (p *PromoCode) ValidFrom() time.Time       { return p.validFrom }
+func (p *PromoCode) ValidUntil() time.Time      { return p.validUntil }
+func (p *PromoCode) CreatedBy() uuid.UUID       { return p.createdBy }
+func (p *PromoCode) CreatedAt() time.Time       { return p.createdAt }
+func (p *PromoCode) UpdatedAt() time.Time       { return p.updatedAt }
