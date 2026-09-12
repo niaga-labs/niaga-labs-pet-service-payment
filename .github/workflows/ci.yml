@@ -8,7 +8,7 @@ on:
 
 jobs:
   go:
-    uses: Kilat-Pet-Delivery/lib-common/.github/workflows/go-ci.yml@main
+    uses: niaga-labs/niaga-labs-pet-lib-common/.github/workflows/go-ci.yml@main
     with:
       needs-lib-common: true
       needs-lib-proto: true
