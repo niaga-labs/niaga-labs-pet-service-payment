@@ -17,8 +17,8 @@ import (
 // fakeClock is a hand-rolled test clock that captures scheduled functions and
 // lets tests advance simulated time to trigger them synchronously.
 type fakeClock struct {
-	now      time.Duration
-	pending  []fakeTimer
+	now     time.Duration
+	pending []fakeTimer
 }
 
 type fakeTimer struct {

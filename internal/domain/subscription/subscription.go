@@ -26,11 +26,11 @@ const (
 
 // PlanInfo defines the properties of a subscription plan.
 type PlanInfo struct {
-	Plan       PlanType `json:"plan"`
-	PriceCents int64    `json:"price_cents"`
-	DurationDays int   `json:"duration_days"`
-	DiscountPct  int   `json:"discount_percent"`
-	Description  string `json:"description"`
+	Plan         PlanType `json:"plan"`
+	PriceCents   int64    `json:"price_cents"`
+	DurationDays int      `json:"duration_days"`
+	DiscountPct  int      `json:"discount_percent"`
+	Description  string   `json:"description"`
 }
 
 // AvailablePlans returns the list of subscription plans.
@@ -105,7 +105,7 @@ func (s *Subscription) IsActive() bool {
 }
 
 // Getters.
-func (s *Subscription) ID() uuid.UUID       { return s.id }
+func (s *Subscription) ID() uuid.UUID        { return s.id }
 func (s *Subscription) UserID() uuid.UUID    { return s.userID }
 func (s *Subscription) Plan() PlanType       { return s.plan }
 func (s *Subscription) PriceCents() int64    { return s.priceCents }

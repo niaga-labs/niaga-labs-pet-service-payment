@@ -23,11 +23,11 @@ const cashOutFeeCents int64 = 50
 
 // CashOutHandler handles HTTP requests for runner cash-out operations.
 type CashOutHandler struct {
-	repo        repository.CashOutRepository
-	ownership   adapter.DestinationOwnership
-	rail        rail.Rail
-	railDelay   time.Duration
-	logger      *zap.Logger
+	repo      repository.CashOutRepository
+	ownership adapter.DestinationOwnership
+	rail      rail.Rail
+	railDelay time.Duration
+	logger    *zap.Logger
 }
 
 // NewCashOutHandler creates a new CashOutHandler with all required dependencies.

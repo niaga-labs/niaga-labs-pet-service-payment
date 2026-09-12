@@ -180,10 +180,10 @@ func TestCashOutRepo_GetAvailableBalance_DeductsOpenCashOuts(t *testing.T) {
 		require.NoError(t, db.Create(&m).Error)
 	}
 
-	seedCashOut("pending", 5000, 50)     // deduct 5050
-	seedCashOut("processing", 3000, 50)  // deduct 3050
-	seedCashOut("completed", 2000, 50)   // deduct 2050
-	seedCashOut("failed", 99000, 50)     // should NOT deduct
+	seedCashOut("pending", 5000, 50)    // deduct 5050
+	seedCashOut("processing", 3000, 50) // deduct 3050
+	seedCashOut("completed", 2000, 50)  // deduct 2050
+	seedCashOut("failed", 99000, 50)    // should NOT deduct
 
 	// Expected: 50000 - (5050 + 3050 + 2050) = 50000 - 10150 = 39850
 	balance, err := repo.GetAvailableBalanceCents(ctx, runnerID)
