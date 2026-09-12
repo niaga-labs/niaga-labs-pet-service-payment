@@ -8,12 +8,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/Kilat-Pet-Delivery/lib-common/kafka"
-	"github.com/Kilat-Pet-Delivery/service-payment/internal/adapter"
-	"github.com/Kilat-Pet-Delivery/service-payment/internal/application"
-	paymentEvents "github.com/Kilat-Pet-Delivery/service-payment/internal/events"
-	"github.com/Kilat-Pet-Delivery/service-payment/internal/repository"
-	"github.com/Kilat-Pet-Delivery/service-payment/internal/saga"
+	"github.com/niaga-labs/niaga-labs-pet-lib-common/kafka"
+	"github.com/niaga-labs/niaga-labs-pet-service-payment/internal/adapter"
+	"github.com/niaga-labs/niaga-labs-pet-service-payment/internal/application"
+	paymentEvents "github.com/niaga-labs/niaga-labs-pet-service-payment/internal/events"
+	"github.com/niaga-labs/niaga-labs-pet-service-payment/internal/repository"
+	"github.com/niaga-labs/niaga-labs-pet-service-payment/internal/saga"
 	"net"
 
 	"github.com/google/uuid"

@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	subDomain "github.com/Kilat-Pet-Delivery/service-payment/internal/domain/subscription"
 	"github.com/google/uuid"
+	subDomain "github.com/niaga-labs/niaga-labs-pet-service-payment/internal/domain/subscription"
 	"go.uber.org/zap"
 )
 
