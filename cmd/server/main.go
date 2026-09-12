@@ -60,23 +60,19 @@ func main() {
 		zapLogger.Fatal("failed to connect to database", zap.Error(err))
 	}
 
-	// Run database migrations
-	if cfg.AppEnv == "development" {
-		if err := db.AutoMigrate(
-			&repository.PaymentModel{},
-			&repository.PromoModel{},
-			&repository.PromoUsageModel{},
-			&repository.SubscriptionModel{},
-			&repository.CashOutModel{},
-		); err != nil {
-			zapLogger.Fatal("failed to auto-migrate", zap.Error(err))
-		}
-		zapLogger.Info("database migration completed (dev auto-migrate)")
-	} else {
-		dbURL := dbConfig.DatabaseURL()
-		if err := database.RunMigrations(dbURL, "migrations", zapLogger); err != nil {
-			zapLogger.Fatal("failed to run migrations", zap.Error(err))
-		}
+	// Run database migrations.
+	//
+	// KPD-60: this used to AutoMigrate in development and run the SQL migrations
+	// everywhere else. promos, promo_usages and subscriptions had no SQL
+	// migration, so they existed only in development -- which would have put
+	// KPD-39 (promo apply during checkout) on tables that do not exist off a
+	// developer laptop. Now that 003 and 004 cover them, every model in this
+	// service has a SQL migration, so there is one path for all environments and
+	// the two can no longer drift apart. Development still gets its schema
+	// automatically, because the server applies the migrations at startup.
+	dbURL := dbConfig.DatabaseURL()
+	if err := database.RunMigrations(dbURL, "migrations", zapLogger); err != nil {
+		zapLogger.Fatal("failed to run migrations", zap.Error(err))
 	}
 
 	// Initialize JWT manager
